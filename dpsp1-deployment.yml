@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dpsp1-deployment
+  labels: 
+    app: dpsp1
+spec:
+  replicas: 5
+  selector: 
+    matchLabels:
+      app: dpsp1
+  template: 
+    metadata:
+      labels: 
+        app: dpsp1
+    spec:
+      containers: 
+      - name: dpsp1
+        image: eld3rb3rry/dpsproject1
+        ports:
+        - containerPort: 3002
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
