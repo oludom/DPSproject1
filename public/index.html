@@ -4,14 +4,37 @@
 <title>Fortune Cookies</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" type="text/css" href="./styles.css" />
-<!-- <script src=""></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+var fortuneFunction = function (){
+
+    var settings = {
+        "url": "/cookie",
+        "method": "GET"
+    };
+
+    $.ajax(settings).done(function(response){
+        $('#fortunecookie').text(response);
+    });
+}
+
+</script>
 <body>
 
 <div class="wrapper">
 <h1>Fortune Cookies</h1>
-<p class="italic">Text</p>
-<button class="button">New Fortune</button>
+<p class="italic" id="fortunecookie">Text</p>
+<button class="button" id="button1">New Fortune</button>
 </div>
+
+<script type="text/javascript">
+fortuneFunction();
+$('#button1').click(function (){
+
+fortuneFunction();
+
+});
+</script> 
 
 </body>
 </html>

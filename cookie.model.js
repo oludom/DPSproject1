@@ -2,7 +2,12 @@
 
 var Cookie = function (){
     this.lastIndex = 0;
-    this.cookieList = [
+
+};
+
+Cookie.getRandom = function (){
+    
+    const cookieList = [
         "Today it’s up to you to create the peacefulness you long for.",
         "A friend asks only for your time not your money.",
         "If you refuse to accept anything but the best, you very often get it.",
@@ -36,10 +41,10 @@ var Cookie = function (){
         "You must try, or hate yourself for not trying.",
         "You can make your own happiness."
     ];
-};
 
-Cookie.getRandom = function (){
-    
-    return this.cookieList[Math.floor(Math.random() * this.cookieList.length)]
+
+    return cookieList[Math.floor(Math.random() * cookieList.length)]
 
 };
+
+module.exports = Cookie;

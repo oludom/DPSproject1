@@ -8,7 +8,7 @@ var path = require('path');
 const app = express();
 
 // Setup server port
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 3002;
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
